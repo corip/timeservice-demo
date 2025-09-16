@@ -37,7 +37,6 @@
     }
   ],
   "cpu": "1024",
-  "enableFaultInjection": false,
   "executionRoleArn": "arn:aws:iam::504252159010:role/ecsTaskExecutionRole",
   "family": "spring-boot-task-definition",
   "memory": "3072",
