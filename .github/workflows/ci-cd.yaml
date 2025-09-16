@@ -6,7 +6,7 @@ jobs:
   build-and-deploy:
     runs-on: [ ubuntu-latest ]
     steps:
-      #Checkoutrama
+        #Checkoutrama
       - name: Checkout source
         uses: actions/checkout@v3
 
@@ -16,7 +16,7 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      #Contruye el proyecto
+       #Contruye el proyecto
       - name: Build Project
         run: mvn clean install -DskipTests
 
@@ -28,7 +28,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: 'us-west-2'
 
-        #Conexión EC#
+        #Conexión ECR
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
@@ -40,7 +40,7 @@ jobs:
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           IMAGE_TAG: ${{ github.sha }}
-          REPOSITORY: springboot-example
+          REPOSITORY: pcoriregistry
         run: |
             # Build a docker container and
             # push it to ECR so that it can
