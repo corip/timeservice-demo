@@ -20,6 +20,6 @@ public class TimeController {
         DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
         Date date = new Date();
 
-        return"Hora actual actualizada: " + dateFormat.format(date);
+        return"Hora actual actualizada Perú: " + dateFormat.format(date);
     }
 }
